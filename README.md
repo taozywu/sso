@@ -25,8 +25,8 @@ public function testSSOAction()<br>
 // 登出页面。<br>
 public function testSSOLogoutAction()<br>
 {<br>
-    session_start();<br>
 
+    session_start();
     unset($_SESSION['UID']);
     unset($_SESSION['UNAME']);
 
