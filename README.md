@@ -6,7 +6,7 @@
 
 ## 原理
 1）假设有多个站点（a.com;b.com;c.com;d.com...），还有个passport站（u.com）<br>
-2）登录：当你从a.com登录，提交会跳到u.com登录操作，u.com会去验证用户和密码是否匹配对，如果匹配不正确则返回code码回调给a.com，a.com拿到code码进行相应处理；如果匹配正确则回调给a.com中会带上sid（凭证），a.com拿到sid后进行解密得出可能有的参数（uid，uname，uexpiretime，uip。。。），如果说a.com有自己的用户表，则可以拿uid去验证下。验证正常后则在a.com保存下会话即可。<br>
+2）登录：当你从a.com登录，提交会跳到u.com登录操作，u.com会去验证用户和密码是否匹配对，如果匹配不正确则返回code码回调给a.com，a.com拿到code码进行相应处理；如果匹配正确在u.com上保存下cookie并回调给a.com中会带上sid（凭证），a.com拿到sid后进行解密得出可能有的参数（uid，uname，uexpiretime，uip。。。），如果说a.com有自己的用户表，则可以拿uid去验证下。验证正常后则在a.com保存下会话即可。<br>
 3）登出：当你从a.com登出，先会清除掉a.com上的会话，然后跳到u.com进行登出操作，操作完后回调到a.com。<br>
 4）自动登录：当访问b.com，则会跳到u.com去通过cookie拿到sid（凭证），然后回调给b.com中带上该参数，后续验证2）逻辑中厚半部分。<br>
 
