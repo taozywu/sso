@@ -11,7 +11,7 @@
 4）自动登录：当访问b.com，则会跳到u.com去通过cookie拿到sid（凭证），然后回调给b.com中带上该参数，后续验证2）逻辑中厚半部分。<br>
 
 ### 使用说明
-、、、
+```
 // 登录入口页面。
 public function testSSOAction()
 {
@@ -76,4 +76,4 @@ public function testDoLoginAction()
     exit;
 
 }
-、、、
+```
