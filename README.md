@@ -11,9 +11,10 @@
 4）自动登录：当访问b.com，则会跳到u.com去通过cookie拿到sid（凭证），然后回调给b.com中带上该参数，后续验证2）逻辑中厚半部分。<br>
 
 ### 使用说明
-// 登录入口页面。<br>
-public function testSSOAction()<br>
-{<br>
+、、、
+// 登录入口页面。
+public function testSSOAction()
+{
 
     session_start();
     if (isset($_SESSION['UID']) && $_SESSION['UID'] > 0) {
@@ -22,9 +23,9 @@ public function testSSOAction()<br>
     }
 }
 
-// 登出页面。<br>
-public function testSSOLogoutAction()<br>
-{<br>
+// 登出页面。
+public function testSSOLogoutAction()
+{
 
     session_start();
     unset($_SESSION['UID']);
@@ -34,11 +35,11 @@ public function testSSOLogoutAction()<br>
 
     header("Location:http://ucenter.dev/?c=SSO&a=logout&back_url=http://hardyaf.dev/index/index/testSSO");
     exit;
-}<br>
+}
 
-// 登录。<br>
-public function testDoLoginAction()<br>
-{<br>
+// 登录。
+public function testDoLoginAction()
+{
 
     session_start();
     $uucode = (int) $_GET['uucode'];
@@ -74,4 +75,5 @@ public function testDoLoginAction()<br>
 
     exit;
 
-}<br>
+}
+、、、
